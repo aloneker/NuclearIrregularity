@@ -2,10 +2,10 @@
 
 This repository will host the code used to calculate and analyze nuclear membrane irregularity for my thesis work. It will be cited in all relevant publications. 
 
-Irregularity describes the normalized area of deviation from a perfect circle with the average radius of the nucleus. Additional measures of irregularity are also measured, including the normalized standard deviation of the radius, and the curvature of membrane indentations. 
+Nuclear irregularity describes the normalized area of deviation from a perfect circle with the average radius of the nucleus. The linearized membrane boundary is also analyzed for points of inflection and then each portion of the membrane is fit with a circle to find the local radius of curvature for each indentation. 
 
-# NuclearShapeAnalysis
+Send the function a binary image of the nuclei and the minimum cross-sectional nuclear area. Function will send back the nuclear irregularity, a vector of all of the radii of curvature, and a vector indicating the concavity of the curvature. Positive and negative radii can be seperated using conditional indexing, see below example. 
 
-This program calculates the radial distance from the centroid of each nucleus to the nuclear boundary. Mean radial distance measures differences in nuclear size, variation in mean radial distance (normalized to account for nuclear size effects) is a measure of nuclear envelope roughness/deformation.
-
-Can also calculate a circular varience (the mean squared varience of the residuals). Residuals are calculated based on comparison to a circle with radius = major axis/minor axis/2
+[nuclearIrregularity, dentRadiiPix, concavity] = calcNucIrregularity(nuclei, minSize);
+negRadii = dentRadiiPix(concavity == -1);
+posRadii = denRadiiPix(concavity == 1);
