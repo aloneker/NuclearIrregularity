@@ -6,6 +6,6 @@ Nuclear irregularity describes the normalized area of deviation from a perfect c
 
 Send the function a binary image of the nuclei and the minimum cross-sectional nuclear area. Function will send back the nuclear irregularity, a vector of all of the radii of curvature, and a vector indicating the concavity of the curvature. Positive and negative radii can be seperated using conditional indexing, see below example. 
 
-[nuclearIrregularity, dentRadiiPix, concavity] = calcNucIrregularity(nuclei, minSize);
-negRadii = dentRadiiPix(concavity == -1);
-posRadii = denRadiiPix(concavity == 1);
+[nuclearIrregularity, dentRadiiPix, concavity] = calcNucIrregularity(nuclei, minSize)
+negRadii = dentRadiiPix(concavity == -1)
+posRadii = denRadiiPix(concavity == 1)
