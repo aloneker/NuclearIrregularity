@@ -51,8 +51,7 @@ function [absArea, dentRadiiPix, concavity] = calcNucIrregularity(nuclei, minSiz
         deriv2SignDiff = diff(deriv2Sign);
         inflectionPoints = find(deriv2SignDiff~=0);
         
-%         concavity = deriv2Sign(inflectionPoints-1);
-%         concavity = concavity(2:end);
+
         circleCount = 0;
         for counter = 2:1:length(inflectionPoints)
             ySection = membrane([inflectionPoints(counter-1):inflectionPoints(counter)]);
