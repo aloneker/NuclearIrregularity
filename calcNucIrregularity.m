@@ -38,7 +38,7 @@ function [absArea, dentRadiiPix, concavity] = calcNucIrregularity(nuclei, minSiz
 
         areaBoundary = membrane - 1;
         absAreaBound = abs(areaBoundary);
-        absBoundaryInt = trapz(2*pi()/length(areaBoundary), absAreaBound); %total area, should be lowest for flattened/stretched, low for wrinkled, and highest for indented
+        absBoundaryInt = trapz(2*pi()/length(areaBoundary), absAreaBound);
         absArea(n) = absBoundaryInt;
 
         y2 = smooth(membrane,0.05,'lowess'); 
